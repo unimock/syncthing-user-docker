@@ -1,0 +1,32 @@
+version: '2'
+services:
+  syncthing:
+    ##################################################
+    # BUILD section
+    ##################################################
+    build:
+      context: ./build
+      dockerfile: Dockerfile
+      args:
+        SYNCTHING_VERSION: "0.14.26"
+        GOSU_VERSION: "1.10"
+    ##################################################
+    # RUN section
+    ##################################################
+    image: unimock/syncthing-user-docker:0.0.0
+    container_name: syncthing
+    restart: "no"
+    ports:
+      - "8384:8384"
+      - "22000:22000"
+      - "21027:21027/udp"
+    environment:
+      - SYNCTHING_USER=${M_USER}
+      - SYNCTHING_UID=${M_UID}
+      - SYNCTHING_GROUP=${M_GROUP}
+      - SYNCTHING_GID=${M_GID}
+      - SYNCTHING_HOMEDIR=/home/${M_USER}
+    volumes:
+      - "/Docker/Services/syncthing/service:/config"
+      - "/home/${M_USER}:/home/${M_USER}"
+
