@@ -8,12 +8,12 @@ services:
       context: ./build
       dockerfile: Dockerfile
       args:
-        SYNCTHING_VERSION: "0.14.27"
+        SYNCTHING_VERSION: "0.14.28"
         GOSU_VERSION: "1.10"
     ##################################################
     # RUN section
     ##################################################
-    image: unimock/syncthing-user-docker:0.0.1
+    image: unimock/syncthing-user-docker:0.0.2
     container_name: syncthing
     restart: "no"
     ports:
