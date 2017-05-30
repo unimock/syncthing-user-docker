@@ -1,4 +1,5 @@
-FROM alpine:3.5
+ARG ALPINE_IMAGE="alpine:3.5"
+FROM ${ALPINE_IMAGE}
 MAINTAINER Unimock <unimock@gate-m.de>
 
 ENV SYNCTHING_USERID=1027 \
