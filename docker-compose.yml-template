@@ -8,13 +8,13 @@ services:
       context: ./build
       dockerfile: Dockerfile
       args:
-        SYNCTHING_VERSION: "0.14.51"
-        ALPINE_IMAGE: "alpine:3.7"
+        SYNCTHING_VERSION: "1.0.0"
+        ALPINE_IMAGE: "alpine:3.8"
         GOSU_VERSION: "1.10"
     ##################################################
     # RUN section
     ##################################################
-    image: unimock/syncthing-user-docker:0.14.51
+    image: unimock/syncthing-user-docker:1.0.0
     container_name: syncthing
     restart: "no"
     ports:
