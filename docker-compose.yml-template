@@ -9,8 +9,8 @@ services:
       dockerfile: Dockerfile
       args:
         SYNCTHING_VERSION: "${DC_SYNCTHING_VERSION}"
-        ALPINE_IMAGE: "alpine:3.12"
-        GOSU_VERSION: "1.10"
+        ALPINE_IMAGE: "alpine:3.14"
+        GOSU_VERSION: "1.14"
     ##################################################
     # RUN section
     ##################################################
